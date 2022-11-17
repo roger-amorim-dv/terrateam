@@ -1,19 +1,19 @@
 on:
   pull_request:
     branches:
-      - feature/github-actions-atlantis
+      - feature/terrateam
     types: [assigned, unassigned, labeled, unlabeled, opened, edited, closed, reopened, synchronize, converted_to_draft, ready_for_review, locked, unlocked, review_requested, review_request_removed, auto_merge_enabled, auto_merge_disabled]
   issue_comment:
     branches:
-      - feature/github-actions-atlantis
+      - feature/terrateam
     types: [created, edited, deleted]
   pull_request_review:
     branches:
-      - feature/github-actions-atlantis
+      - feature/terrateam
     types: [submitted, edited, dismissed]
   pull_request_review_comment:
     branches:
-      - feature/github-actions-atlantis
+      - feature/terrateam
     types: [created, edited, deleted]
 
 name: Atlantis
