@@ -16,3 +16,7 @@ provider "aws" {
 resource "aws_s3_bucket" "my_s3" {
   bucket = "my-s3-validated"
 }
+
+resource "aws_s3_bucket" "my_s3_new" {
+  bucket = "my-s3-validated-new"
+}
