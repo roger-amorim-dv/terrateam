@@ -13,20 +13,6 @@ provider "aws" {
   region     = "us-east-1"
 }
 
-resource "aws_instance" "app_server" {
-  ami           = "ami-0b0dcb5067f052a63"
-  instance_type = "t2.micro"
-
-  tags = {
-    Name = "ExampleInstance"
-  }
-}
-
-resource "aws_instance" "app_server_recovery" {
-  ami           = "ami-0b0dcb5067f052a63"
-  instance_type = "t2.micro"
-
-  tags = {
-    Name = "ExampleInstanceRecovery"
-  }
+resource "aws_s3_bucket" "my_s3" {
+  bucket = "my-s3-validated"
 }
