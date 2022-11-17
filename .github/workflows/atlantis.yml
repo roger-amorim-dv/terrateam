@@ -1,0 +1,32 @@
+on:
+  pull_request:
+    branches:
+      - feature/terrateam
+    types: [assigned, unassigned, labeled, unlabeled, opened, edited, closed, reopened, synchronize, converted_to_draft, ready_for_review, locked, unlocked, review_requested, review_request_removed, auto_merge_enabled, auto_merge_disabled]
+  issue_comment:
+    branches:
+      - feature/terrateam
+    types: [created, edited, deleted]
+  pull_request_review:
+    branches:
+      - feature/terrateam
+    types: [submitted, edited, dismissed]
+  pull_request_review_comment:
+    branches:
+      - feature/terrateam
+    types: [created, edited, deleted]
+
+name: Atlantis
+
+jobs:
+  pr_commented:
+    # This job only runs for pull request comments
+    name: PR comment atlantis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Emitter HTTP Request Atlantis
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: 'https://webhook.site/6a0d65f8-f371-4791-80bf-de5912082e97'
+          method: 'POST'
+          data: '${{ github.event.comment.body }}'
